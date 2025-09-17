@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Affirmations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      transition: background-color 0.5s ease;
+    }
+    .quote-box {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 400px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      background: #007bff;
+      color: white;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="quote-box">
+    <p id="quote">Click the button to get a random quote!</p>
+    <button onclick="newQuote()">Get Quote</button>
+  </div>
+
+  <script>
+    const quotes = [
+      "The best way to predict the future is to invent it.",
+      "Do one thing every day that scares you.",
+      "Success is not in what you have, but who you are.",
+      "Dream big and dare to fail.",
+      "Happiness depends upon ourselves.",
+      "One day or Day 1."
+    ];
+
+    function newQuote() {
+      // pick a random quote
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById("quote").innerText = quotes[randomIndex];
+
+      // change background color randomly
+      const randomColor = `hsl(${Math.floor(Math.random() * 360)}, 70%, 80%)`;
+      document.body.style.backgroundColor = randomColor;
+    }
+  </script>
+</body>
+</html>
